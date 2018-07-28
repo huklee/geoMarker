@@ -4,7 +4,10 @@ from IPython.display import display
 import os
 
 changeSet = {"카이스트" : "KAIST",
-             "오션월드" : "OceanWorld"
+             "오션월드" : "OceanWorld",
+             "문래동" : "Mullae-dong",
+             "크리스마스" : "Mullae-dong",
+             
         }
 
 def decode(s):
@@ -27,7 +30,7 @@ def changeKo2En(countSet, word):
 
 def fixBrokenEncodingFileName(dirName):
     countSet = {}
-    dList = os.listdir(dirName)
+    dList = sorted(os.listdir(dirName))
     for f in dList:
         if not f[-4:].lower() == ".jpg":
             continue
@@ -56,7 +59,7 @@ def getDate(fileName):
     
 
 def markAllGeoDateDir(dirName, newdirName=""):
-    dList = os.listdir(dirName)
+    dList = sorted(os.listdir(dirName))
     for f in dList:
         if f[-4:].lower() != ".jpg":
             continue
@@ -70,7 +73,7 @@ def markAllGeoDateDir(dirName, newdirName=""):
         modiExif(filePath, newPath, lat, lon, getDate(f))
     
 def displayAllPictures(dirName):
-    dList = os.listdir(dirName)
+    dList = sorted(os.listdir(dirName))
     for f in dList:
         if f[-4:].lower() != ".jpg":
             continue
