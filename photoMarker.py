@@ -66,8 +66,28 @@ def fixBrokenEncodingFileName(dirName):
 
         
 locationSet = {
-    "KAIST":(36.372902, 127.360034),
-    "OceanWorld":(37.648157, 127.685571),
+    "KAIST" : (36.372902, 127.360034),
+    "OceanWorld" : (37.648157, 127.685571),
+    "Mullae-dong" : (37.518165, 126.891575),   
+    "Oakham" : (52.669479, -0.726607),
+    "Leicester" : (52.634659, -1.137981),
+    "WilloBrook" : (52.184728, -0.973897),
+    "Gayton" : (52.184728, -0.973897),
+    "London" : (51.504828, -0.124106),
+    "Bergen" : (60.393382, 5.322738),
+    "Trondheim" : (63.399470, 10.436837),
+    "Europe Trip Plan" : (63.399470, 10.436837),
+    "Galdhpiggen" : (61.636886, 8.309992),
+    "Stavanger" : (58.969965, 5.732427),
+    "Molde" : (62.737244, 7.160932),
+    "Oslo" : (59.909001, 10.760019),
+    "Brussels" : (50.852527, 4.360362),
+    "Cologne" : (50.941226, 6.956957),
+    "Berlin" : (52.519645, 13.411627),
+    "Gmunden" : (47.910704, 13.790383),
+    "Salzburg" : (47.795819, 13.047236),
+    "Vienna" : (48.234757, 16.416924),
+    "Interlaken" : (46.687572, 7.869444),
 }
 
 
@@ -80,7 +100,7 @@ def getLocationSet(word):
 
 def getDate(fileName):
     (year, month, day) = (fileName[:4], fileName[5:7], fileName[8:10])
-    return "%s:%s:%s 00:00:00" % (year, month, day)
+    return "%s:%s:%s 12:00:00" % (year, month, day)
     
 
 def markAllGeoDateDir(dirName, newdirName=""):
